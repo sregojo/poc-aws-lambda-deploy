@@ -3,9 +3,9 @@ version: 0.2
 phases:
   build:
     commands:
-      - ls
-      - cd src/microservice.api.rest && dotnet restore
-      - cd src/microservice.api.rest && dotnet build
+      - cd src/microservice.api.rest
+      - dotnet restore
+      - dotnet build
 artifacts:
   files:
     - src/microservice.api.rest/bin/Debug/netcoreapp2.0/*
