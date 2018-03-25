@@ -1,12 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace lambdarestapi
+namespace microservice.api.rest
 {
     /// <summary>
     /// The Main function can be used to run the ASP.NET Core application locally using the Kestrel webserver.
     /// </summary>
-    public class Program
+    public class LocalEntryPoint
     {
         public static void Main(string[] args)
         {
@@ -14,8 +19,7 @@ namespace lambdarestapi
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-            WebHost
-                .CreateDefaultBuilder(args)
+            WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .Build();
     }

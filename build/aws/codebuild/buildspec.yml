@@ -3,8 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - cd lambdarestapi.aws.lamda.host && dotnet restore
-      - cd lambdarestapi.aws.lamda.host && dotnet build
+      - cd src/microservice.api.rest && dotnet restore
+      - cd src/microservice.api.rest && dotnet build
 artifacts:
   files:
-    - lambdarestapi.aws.lamda.host/bin/Debug/netcoreapp2.0/*
+    - src/microservice.api.rest/bin/Debug/netcoreapp2.0/*

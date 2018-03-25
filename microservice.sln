@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D836384E-2405-453F-9CF5-650B40C7DBE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{1B2F19B1-05EF-4FC2-B71B-35B7D66ED68C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{28C92557-2869-479E-AFB1-6CA6993CAA40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{201641FB-A2B6-439D-B302-BCFC4D87E3B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{F8264270-8230-4E70-99D3-79F74A18FE65}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws", "aws", "{920C6A57-E957-40F7-BD11-F3F66927232F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codedebuild", "codedebuild", "{EA39CD1D-7473-413C-9E79-65816AC2BC22}"
+	ProjectSection(SolutionItems) = preProject
+		build\aws\codebuild\buildspec.yml = build\aws\codebuild\buildspec.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "microservice.api.rest", "src\microservice.api.rest\microservice.api.rest.csproj", "{C1207324-0168-4D79-A07E-C2E415A825DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1207324-0168-4D79-A07E-C2E415A825DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1207324-0168-4D79-A07E-C2E415A825DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1207324-0168-4D79-A07E-C2E415A825DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1207324-0168-4D79-A07E-C2E415A825DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{920C6A57-E957-40F7-BD11-F3F66927232F} = {1B2F19B1-05EF-4FC2-B71B-35B7D66ED68C}
+		{EA39CD1D-7473-413C-9E79-65816AC2BC22} = {920C6A57-E957-40F7-BD11-F3F66927232F}
+		{C1207324-0168-4D79-A07E-C2E415A825DD} = {D836384E-2405-453F-9CF5-650B40C7DBE7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8DD682B-9BA8-448C-9813-E842BFF6F249}
+	EndGlobalSection
+EndGlobal

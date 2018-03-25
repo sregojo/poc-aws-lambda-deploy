@@ -12,7 +12,7 @@ using Amazon.S3.Model;
 
 using Newtonsoft.Json;
 
-namespace lambdarestapi.Controllers
+namespace microservice.api.rest.Controllers
 {
     /// <summary>
     /// ASP.NET Core controller acting as a S3 Proxy.

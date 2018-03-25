@@ -42,22 +42,22 @@ To view your deployed application open the Stack View window by double-clicking 
 
 ## Here are some steps to follow to get started from the command line:
 
-Once you have edited your template and code you can use the following command lines to deploy your application from the command line (these examples assume the project name is *lambdarestapi*):
+Once you have edited your template and code you can use the following command lines to deploy your application from the command line (these examples assume the project name is *microservice.api.rest*):
 
 Restore dependencies
 ```
-    cd "lambdarestapi"
+    cd "microservice.api.rest"
     dotnet restore
 ```
 
 Execute unit tests
 ```
-    cd "lambdarestapi/test/lambdarestapi.Tests"
+    cd "microservice.api.rest/test/microservice.api.rest.Tests"
     dotnet test
 ```
 
 Deploy application
 ```
-    cd "lambdarestapi/src/lambdarestapi"
+    cd "microservice.api.rest/src/microservice.api.rest"
     dotnet lambda deploy-serverless
 ```
