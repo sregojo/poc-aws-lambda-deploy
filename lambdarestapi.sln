@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D836384E-2405-453F-9CF5-650B40C7DBE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{1B2F19B1-05EF-4FC2-B71B-35B7D66ED68C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{28C92557-2869-479E-AFB1-6CA6993CAA40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{201641FB-A2B6-439D-B302-BCFC4D87E3B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lambdarestapi", "src\lambdarestapi.csproj", "{F89692C8-F1AC-44A8-BDFC-792DE3D80C7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{F8264270-8230-4E70-99D3-79F74A18FE65}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws", "aws", "{920C6A57-E957-40F7-BD11-F3F66927232F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codedebuild", "codedebuild", "{EA39CD1D-7473-413C-9E79-65816AC2BC22}"
+	ProjectSection(SolutionItems) = preProject
+		build\aws\codebuild\buildspec.yml = build\aws\codebuild\buildspec.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambdarestapi.aws.lamda.host", "..\lambdarestapi.aws.lamda.host\lambdarestapi.aws.lamda.host.csproj", "{3D9F8A4B-74A8-47DA-BA08-6A493FD5FDF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambdarest.api.console.host", "lambdarest.api.console.host\lambdarest.api.console.host.csproj", "{E1B172E9-E9AA-4174-9B3C-218A53370765}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F89692C8-F1AC-44A8-BDFC-792DE3D80C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89692C8-F1AC-44A8-BDFC-792DE3D80C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89692C8-F1AC-44A8-BDFC-792DE3D80C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89692C8-F1AC-44A8-BDFC-792DE3D80C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D9F8A4B-74A8-47DA-BA08-6A493FD5FDF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9F8A4B-74A8-47DA-BA08-6A493FD5FDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9F8A4B-74A8-47DA-BA08-6A493FD5FDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9F8A4B-74A8-47DA-BA08-6A493FD5FDF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B172E9-E9AA-4174-9B3C-218A53370765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B172E9-E9AA-4174-9B3C-218A53370765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B172E9-E9AA-4174-9B3C-218A53370765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B172E9-E9AA-4174-9B3C-218A53370765}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F89692C8-F1AC-44A8-BDFC-792DE3D80C7A} = {D836384E-2405-453F-9CF5-650B40C7DBE7}
+		{920C6A57-E957-40F7-BD11-F3F66927232F} = {1B2F19B1-05EF-4FC2-B71B-35B7D66ED68C}
+		{EA39CD1D-7473-413C-9E79-65816AC2BC22} = {920C6A57-E957-40F7-BD11-F3F66927232F}
+		{3D9F8A4B-74A8-47DA-BA08-6A493FD5FDF7} = {D836384E-2405-453F-9CF5-650B40C7DBE7}
+		{E1B172E9-E9AA-4174-9B3C-218A53370765} = {D836384E-2405-453F-9CF5-650B40C7DBE7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8DD682B-9BA8-448C-9813-E842BFF6F249}
+	EndGlobalSection
+EndGlobal

@@ -7,4 +7,4 @@ phases:
       - dotnet build
 artifacts:
   files:
-    - bin/Debug/netcoreapp2.0/*
+    - lambdarestapi.aws.lamda.host/bin/Debug/netcoreapp2.0/*
