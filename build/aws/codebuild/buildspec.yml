@@ -1,7 +1,5 @@
 version: 0.2
-env:
-  parameter-store:
-    BUILD_PROJECT: "microservice.api.rest"
+
 phases:
   install:
     commands:
@@ -11,12 +9,12 @@ phases:
       - dotnet --info --version
   build:
     commands:
-      - dotnet build src/$BUILD_PROJECT
+      - dotnet build src/microservice.api.rest
   post_build:
     commands:
       - mkdir artifacts
-      - dotnet publish src/$BUILD_PROJECT --output publish
-      - zip artifacts/$BUILD_PROJECT.zip src/$BUILD_PROJECT/publish
+      - dotnet publish src/microservice.api.rest--output publish
+      - zip artifacts/microservice.api.rest.zip src/microservice.api.rest/publish
 artifacts:
   files:
-    - artifacts/$BUILD_PROJECT.zip
+    - artifacts/microservice.api.rest.zip
