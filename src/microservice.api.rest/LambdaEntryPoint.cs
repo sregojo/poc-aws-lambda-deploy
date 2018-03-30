@@ -19,10 +19,6 @@ namespace microservice.api.rest
     /// </summary>
     public class LambdaEntryPoint : Amazon.Lambda.AspNetCoreServer.APIGatewayProxyFunction
     {
-
-        static long callcount = 0;
-        static long initcount = 0;
-
         /// <summary>
         /// The builder has configuration, logging and Amazon API Gateway already configured. The startup class
         /// needs to be configured in this method using the UseStartup<>() method.
@@ -31,28 +27,12 @@ namespace microservice.api.rest
         protected override void Init(IWebHostBuilder builder)
         {
             builder.UseStartup<Startup>();
-            initcount++;
         }
 
         public async override Task<APIGatewayProxyResponse> FunctionHandlerAsync(APIGatewayProxyRequest request, ILambdaContext lambdaContext)
         {
 
-            Stopwatch timeCall = Stopwatch.StartNew();
-
             var result =  await base.FunctionHandlerAsync(request, lambdaContext);
-            //var result = new APIGatewayProxyResponse()
-            //{
-            //    Headers = new Dictionary<string,string>(),
-            //    Body = "{test}",
-            //    IsBase64Encoded = false,
-            //    StatusCode = 200
-            //};
-
-            timeCall.Stop();
-
-            result.Headers.Add("FunctionHandlerAsyncTIME", timeCall.ElapsedMilliseconds.ToString());
-            result.Headers.Add("FunctionHandlerAsyncCALLCOUNT", (++callcount).ToString());
-            result.Headers.Add("InitCALLCOUNT", (initcount).ToString());
 
             return result;
         }
