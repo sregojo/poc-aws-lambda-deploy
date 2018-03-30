@@ -1,17 +1,15 @@
 version: 0.2
 
 phases:
-    install:
+  install:
       commands:
         - apt-get install -y zip
-
   build:
     commands:
       - dotnet --info --version
       - cd src/microservice.api.rest
       - dotnet publish
       - zip -r microservice.api.rest.zip bin/Debug/netcoreapp2.0/publish
-      
 artifacts:
   files:
     - src/microservice.api.rest/microservice.api.rest.zip
