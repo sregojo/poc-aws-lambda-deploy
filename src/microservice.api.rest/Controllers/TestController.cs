@@ -13,7 +13,7 @@ namespace microservice.api.rest.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "Test02" };
+            return new string[] { "Test01" };
         }
 
         // GET api/values/5
