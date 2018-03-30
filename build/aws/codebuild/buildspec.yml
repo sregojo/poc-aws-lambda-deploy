@@ -13,8 +13,9 @@ phases:
       
   post_build:
     commands:
-      - cd src/microservice.api.rest/publish
       - dotnet publish src/microservice.api.rest --output ~/publish
+      - ls
+      - cd src/microservice.api.rest/publish
       - zip -r publish/microservice.api.rest.zip
 artifacts:
   files:
