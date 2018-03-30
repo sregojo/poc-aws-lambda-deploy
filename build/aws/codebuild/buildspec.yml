@@ -13,6 +13,7 @@ phases:
       - dotnet publish src/microservice.api.rest
   post_build:
     commands:
+      - mkdir build/artifacts
       - zip -r build/artifacts/microservice.api.rest.zip src/microservice.api.rest/bin/Debug/netcoreapp2.0/publish
 artifacts:
   files:
