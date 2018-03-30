@@ -6,7 +6,6 @@ phases:
       - apt-get install -y zip
   pre_build:
     commands:
-      - echo Building source version $CODEBUILD_RESOLVED_SOURCE_VERSION
       - dotnet --info --version
   build:
     commands:
@@ -15,7 +14,7 @@ phases:
     commands:
       - dotnet publish src/microservice.api.rest --output publish
       - cd src/microservice.api.rest/publish
-      - zip microservice.api.rest.zip
+      - zip microservice.api.rest.zip .
 artifacts:
   files:
     - src/microservice.api.rest/publish/microservice.api.rest.zip
