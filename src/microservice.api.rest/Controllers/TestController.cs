@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace microservice.api.rest.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class TestController : Microsoft.AspNetCore.Mvc.Controller
     {
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2", "value3" };
+            return new string[] { "Test02" };
         }
 
         // GET api/values/5
@@ -27,6 +27,7 @@ namespace microservice.api.rest.Controllers
         [HttpPost]
         public void Post([FromBody]string value)
         {
+
         }
 
         // PUT api/values/5
