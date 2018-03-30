@@ -14,7 +14,7 @@ phases:
   post_build:
     commands:
       - mkdir publish
-      - zip publish/microservice.api.rest.zip -b src/microservice.api.rest/bin/Debug/netcoreapp2.0/publish
+      - zip -r publish/microservice.api.rest.zip src/microservice.api.rest/bin/Debug/netcoreapp2.0/publish/*
 artifacts:
   files:
     - publish/microservice.api.rest.zip
