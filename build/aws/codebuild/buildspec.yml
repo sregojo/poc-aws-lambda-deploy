@@ -17,4 +17,4 @@ phases:
 artifacts:
   type: zip
   files:
-    - src/microservice.api.rest/publish
+    - src/microservice.api.rest/publish/*
