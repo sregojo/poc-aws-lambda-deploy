@@ -2,14 +2,21 @@ version: 0.2
 
 phases:
   install:
-      commands:
-        - apt-get install -y zip
+    commands:
+      - apt-get install -y zip
+  pre_build:
+    commands:
+      - echo Building source version $CODEBUILD_SOURCE_VERSION
+      - dotnet --info --version
   build:
     commands:
-      - dotnet --info --version
       - cd src/microservice.api.rest
       - dotnet publish
-      - zip -r microservice.api.rest.zip bin/Debug/netcoreapp2.0/publish
+  post_build:
+    commands:
+      - echo Current path
+      - pwd
+      - zip -r build/artifacts/microservice.api.rest.zip src/microservice.api.rest/bin/Debug/netcoreapp2.0/publish
 artifacts:
   files:
-    - src/microservice.api.rest/microservice.api.rest.zip
+    - build/artifacts/microservice.api.rest.zip
