@@ -6,7 +6,7 @@ phases:
       - apt-get install -y zip
   pre_build:
     commands:
-      - echo Building source version $CODEBUILD_SOURCE_VERSION
+      - echo Building source version $CODEBUILD_RESOLVED_SOURCE_VERSION
       - dotnet --info --version
   build:
     commands:
