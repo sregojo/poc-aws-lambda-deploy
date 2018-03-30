@@ -15,7 +15,7 @@ phases:
     commands:
       - dotnet publish src/microservice.api.rest --output publish
       - cd src/microservice.api.rest/publish
-      - zip -r publish/microservice.api.rest.zip
+      - zip publish/microservice.api.rest.zip
 artifacts:
   files:
     - src/microservice.api.rest/publish/microservice.api.rest.zip
