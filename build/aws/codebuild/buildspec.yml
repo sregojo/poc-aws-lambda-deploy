@@ -10,13 +10,12 @@ phases:
       - dotnet --info --version
   build:
     commands:
-      
+      - dotnet build src/microservice.api.rest
   post_build:
     commands:
-      - dotnet publish src/microservice.api.rest --output ~/publish
-      - ls
+      - dotnet publish src/microservice.api.rest --output publish
       - cd src/microservice.api.rest/publish
       - zip -r publish/microservice.api.rest.zip
 artifacts:
   files:
-    - publish/microservice.api.rest.zip
+    - src/microservice.api.rest/publish/microservice.api.rest.zip
