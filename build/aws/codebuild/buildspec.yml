@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - mkdir artifacts
-      - dotnet publish src/microservice.api.rest--output publish
+      - dotnet publish src/microservice.api.rest --output publish
       - zip artifacts/microservice.api.rest.zip src/microservice.api.rest/publish
 artifacts:
   files:
