@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws", "aws", "{920C6A57-E95
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codedebuild", "codedebuild", "{EA39CD1D-7473-413C-9E79-65816AC2BC22}"
 	ProjectSection(SolutionItems) = preProject
+		build\aws\codebuild\builddef.json = build\aws\codebuild\builddef.json
 		build\aws\codebuild\buildspec.yml = build\aws\codebuild\buildspec.yml
 	EndProjectSection
 EndProject
