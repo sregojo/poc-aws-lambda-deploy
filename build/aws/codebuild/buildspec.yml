@@ -17,4 +17,4 @@ phases:
       - zip -r microservice.api.rest.zip ./*
 artifacts:
   files:
-    - src/microservice.api.rest/publish/microservice.api.rest.zip
+    - src/microservice.api.rest/bin/publish/microservice.api.rest.zip
