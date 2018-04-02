@@ -4,6 +4,36 @@ phases:
   install:
     commands:
       - apt-get install -y zip
+      - echo -------VARIABLES---------
+      - echo $AWS_DEFAULT_REGION
+      - echo $AWS_REGION
+      - echo $CODEBUILD_BUILD_ARN
+      - echo $CODEBUILD_BUILD_ID
+      - echo $CODEBUILD_BUILD_IMAGE
+      - echo $CODEBUILD_BUILD_SUCCEEDING
+      - echo $CODEBUILD_INITIATOR
+      - echo $CODEBUILD_KMS_KEY_ID
+      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+      - echo $CODEBUILD_SOURCE_REPO_URL
+      - echo $CODEBUILD_SOURCE_VERSION
+      - echo $CODEBUILD_SRC_DIR
+      - echo $HOME
+      - echo -------------------------
+      - echo -------VARIABLES---------
+      - echo ${AWS_DEFAULT_REGION}
+      - echo ${AWS_REGION}
+      - echo ${CODEBUILD_BUILD_ARN}
+      - echo ${CODEBUILD_BUILD_ID}
+      - echo ${CODEBUILD_BUILD_IMAGE}
+      - echo ${CODEBUILD_BUILD_SUCCEEDING}
+      - echo ${CODEBUILD_INITIATOR}
+      - echo ${CODEBUILD_KMS_KEY_ID}
+      - echo ${CODEBUILD_RESOLVED_SOURCE_VERSION}
+      - echo ${CODEBUILD_SOURCE_REPO_URL}
+      - echo ${CODEBUILD_SOURCE_VERSION}
+      - echo ${CODEBUILD_SRC_DIR}
+      - echo ${HOME}
+      - echo -------------------------
   pre_build:
     commands:
       - dotnet --info --version

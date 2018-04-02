@@ -1,0 +1,50 @@
+s3-bucket-name
+cloudformation-stack-name
+
+
+aws s3 mb s3://s3-bucket-name
+aws cloudformation package --template-file serverless.template --output-template-file serverless.package --s3-bucket s3-bucket-name
+
+aws cloudformation create-stack --stack-name cloudformation-stack-name --template-body file://sampletemplate.json
+aws cloudformation deploy --template-file serverless.package --stack-name cloudformation-stack-name
+
+
+aws iam create-role --role-name CodeBuildServiceRole --assume-role-policy-document file://create-role.json
+aws iam put-role-policy --role-name CodeBuildServiceRole --policy-name CodeBuildServiceRolePolicy --policy-document file://buildrolepolicy.json
+aws codebuild create-project --cli-input-json file://create-project.json
+aws codebuild start-build --project-name xxxx
+
+aws apigateway create-deployment --rest-api-id t9yk7zchnh --stage-name environmentname
+
+
+aws iam create-role --generate-cli-skeleton
+
+Crear un entorno.
+	Api gateway vacio que tira de un mock.
+Compilar y testear una version.
+Deployar una version en un entorno.
+Crear un pipeline de continuos integration.
+Crear la autenticacion.
+Crear el contexto de la aplicacion
+	Entorno.
+	Usuario.
+	Traza de llamada
+Instrumentacion.
+Cuadro de mando del sistema.
+
+git add -A
+git commit -m "fix"
+git push
+aws codebuild start-build --project-name MsTestBuild
+
+
+Para la compilacion:
+Para todos los microservicions:
+	- Un buket para los artefactos
+	- Un role para la build (o un rol por microservicio??)
+Se necesita una build por microservicio
+	Se pasa como parametro el nombre del microservicio y el branch
+	El entorno es el branch, o la PR. -> Crea stage en api gateway?
+	Ver como desplegar un par de microservicios desde branch/PR y usar otros que no se han tocado para testear junto. Concepto de entorno.?
+
+      - zip artifacts/microservice.api.rest.zip src/microservice.api.rest/publish

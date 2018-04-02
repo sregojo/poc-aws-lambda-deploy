@@ -1,0 +1,4 @@
+aws s3api create-bucket --bucket ms-builds --acl private
+aws iam create-role --role-name microservice-build-role --assume-role-policy-document file://microservice-build-role.json
+aws iam put-role-policy --role-name microservice-build-role --policy-name microservice-build-role-policy --policy-document file://microservice-build-role-policy.json
+aws codebuild create-project --cli-input-json file://microservice-build-definition.json

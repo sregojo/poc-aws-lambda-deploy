@@ -1,0 +1,25 @@
+{
+  "name": "microservice-build",
+  "serviceRole": "arn:aws:iam::924772764137:role/microservice-build-role",
+  "artifacts": {
+    "namespaceType": "NONE",
+    "packaging": "NONE",
+    "type": "S3",
+    "location": "ms-builds",
+    "name": "microservice-artifacts"
+  },
+  "timeoutInMinutes": 60,
+  "environment": {
+    "computeType": "BUILD_GENERAL1_SMALL",
+    "privilegedMode": true,
+    "image": "aws/codebuild/dot-net:core-2.0",
+    "type": "LINUX_CONTAINER",
+    "environmentVariables": []
+  },
+  "source": {
+    "buildspec": "build/aws/codebuild/buildspec.yml",
+    "type": "GITHUB",
+    "location": "https://github.com/sregojo/poc-aws-lambda-deploy.git",
+    "auth": { "type": "OAUTH" }
+  }
+}

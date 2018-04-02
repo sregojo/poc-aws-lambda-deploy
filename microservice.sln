@@ -22,11 +22,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws", "aws", "{920C6A57-E95
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codedebuild", "codedebuild", "{EA39CD1D-7473-413C-9E79-65816AC2BC22}"
 	ProjectSection(SolutionItems) = preProject
-		build\aws\codebuild\builddef.json = build\aws\codebuild\builddef.json
 		build\aws\codebuild\buildspec.yml = build\aws\codebuild\buildspec.yml
+		build\aws\codebuild\microservice-build-definition.json = build\aws\codebuild\microservice-build-definition.json
+		build\aws\codebuild\microservice-build-role-policy.json = build\aws\codebuild\microservice-build-role-policy.json
+		build\aws\codebuild\microservice-build-role.json = build\aws\codebuild\microservice-build-role.json
+		run.commands = run.commands
+		setup.commands = setup.commands
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "microservice.api.rest", "src\microservice.api.rest\microservice.api.rest.csproj", "{C1207324-0168-4D79-A07E-C2E415A825DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws", "aws", "{60AF669B-9728-4D83-8F33-470550378997}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cloudformation", "cloudformation", "{3CCBA033-3775-4918-B5D2-0FD87FF3CA90}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\aws\cloudformation\template.json = deploy\aws\cloudformation\template.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +57,8 @@ Global
 		{920C6A57-E957-40F7-BD11-F3F66927232F} = {1B2F19B1-05EF-4FC2-B71B-35B7D66ED68C}
 		{EA39CD1D-7473-413C-9E79-65816AC2BC22} = {920C6A57-E957-40F7-BD11-F3F66927232F}
 		{C1207324-0168-4D79-A07E-C2E415A825DD} = {D836384E-2405-453F-9CF5-650B40C7DBE7}
+		{60AF669B-9728-4D83-8F33-470550378997} = {28C92557-2869-479E-AFB1-6CA6993CAA40}
+		{3CCBA033-3775-4918-B5D2-0FD87FF3CA90} = {60AF669B-9728-4D83-8F33-470550378997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A8DD682B-9BA8-448C-9813-E842BFF6F249}
