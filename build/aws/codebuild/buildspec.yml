@@ -3,8 +3,9 @@ version: 0.2
 phases:
   install:
     commands:
+      - ls
       - apt-get install -y zip
-
+      - apt-get install git
       - echo -------VARIABLES---------
       - echo ${AWS_DEFAULT_REGION}
       - echo ${AWS_REGION}
