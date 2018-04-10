@@ -34,7 +34,8 @@ phases:
       - dotnet publish src/microservice.api.rest --output bin/publish
       - cd src/microservice.api.rest/bin/publish
       - zip -r microservice.api.rest.zip ./*
-      - mv ./ ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/
+      - cd $CODEBUILD_SRC_DIR
+      - mv src/microservice.api.rest/bin/publish ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/
 artifacts:
   files:
     - ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/microservice.api.rest.zip
