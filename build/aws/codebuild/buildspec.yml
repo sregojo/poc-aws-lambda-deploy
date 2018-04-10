@@ -31,6 +31,8 @@ phases:
       - cd src/microservice.api.rest/bin/publish
       - zip -r microservice.api.rest.zip ./*
       - cd $CODEBUILD_SRC_DIR
+      - pws
+      - ls
       - mv src/microservice.api.rest/bin/publish ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/
 artifacts:
   files:
