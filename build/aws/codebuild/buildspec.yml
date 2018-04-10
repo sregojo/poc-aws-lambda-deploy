@@ -20,8 +20,10 @@ phases:
       - echo ${CODEBUILD_SRC_DIR}
       - echo ${HOME}
       - echo -------GIT---------
-      - git rev-parse HEAD   
-      - git branch | grep \* | cut -d ' ' -f2      
+      - ${GIT_COMMIT}=(git rev-parse HEAD)
+      - ${GIT_BRANCH}=(git branch | grep \* | cut -d ' ' -f2 )
+      - echo ${GIT_COMMIT}
+      - echo ${GIT_BRANCH}      
       - echo -------------------------
   pre_build:
     commands:
