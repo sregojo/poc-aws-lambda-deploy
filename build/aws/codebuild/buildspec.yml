@@ -2,8 +2,7 @@ version: 0.2
 
 phases:
   install:
-    commands:     
-      - apt-get install -y zip
+    commands:
       - echo -------VARIABLES---------
       - echo ${AWS_DEFAULT_REGION}
       - echo ${AWS_REGION}
@@ -28,13 +27,12 @@ phases:
   post_build:
     commands:
       - dotnet publish src/microservice.api.rest --output bin/publish
+
       - cd src/microservice.api.rest/bin/publish
       - zip -r microservice.api.rest.zip ./*
-      - cd $CODEBUILD_SRC_DIR
-      - pwd
-      - ls
-      - echo src/${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}   
-      - mv src/microservice.api.rest/bin/publish/microservice.api.rest.zip src/${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}
+
+      - mkdir -p ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}   
+      - mv src/microservice.api.rest/bin/publish/microservice.api.rest.zip ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/microservice.api.rest.zip
 artifacts:
   files:
-    - src/${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/microservice.api.rest.zip
+    - ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/microservice.api.rest.zip
