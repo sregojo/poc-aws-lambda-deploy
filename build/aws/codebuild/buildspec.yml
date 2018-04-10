@@ -2,12 +2,8 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      - ls
-      - ls ..
-      - ls ../..      
+    commands:     
       - apt-get install -y zip
-      - apt-get install git
       - echo -------VARIABLES---------
       - echo ${AWS_DEFAULT_REGION}
       - echo ${AWS_REGION}
@@ -21,18 +17,11 @@ phases:
       - echo ${CODEBUILD_SOURCE_REPO_URL}
       - echo ${CODEBUILD_SOURCE_VERSION}
       - echo ${CODEBUILD_SRC_DIR}
-      - echo ${HOME}
-      - echo -------GIT---------
-      - GIT_XX=(pwd)      
-      - GIT_COMMIT=(git rev-parse HEAD)
-      - GIT_BRANCH=(git branch | grep \* | cut -d ' ' -f2 )
-      - echo ${GIT_COMMIT}
-      - echo ${GIT_BRANCH}      
+      - echo ${HOME}   
       - echo -------------------------
   pre_build:
     commands:
       - dotnet --info --version
-      - git --version
   build:
     commands:
       - dotnet build src/microservice.api.rest
