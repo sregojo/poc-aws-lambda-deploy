@@ -4,21 +4,7 @@ phases:
   install:
     commands:
       - apt-get install -y zip
-      - echo -------VARIABLES---------
-      - echo $AWS_DEFAULT_REGION
-      - echo $AWS_REGION
-      - echo $CODEBUILD_BUILD_ARN
-      - echo $CODEBUILD_BUILD_ID
-      - echo $CODEBUILD_BUILD_IMAGE
-      - echo $CODEBUILD_BUILD_SUCCEEDING
-      - echo $CODEBUILD_INITIATOR
-      - echo $CODEBUILD_KMS_KEY_ID
-      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
-      - echo $CODEBUILD_SOURCE_REPO_URL
-      - echo $CODEBUILD_SOURCE_VERSION
-      - echo $CODEBUILD_SRC_DIR
-      - echo $HOME
-      - echo -------------------------
+
       - echo -------VARIABLES---------
       - echo ${AWS_DEFAULT_REGION}
       - echo ${AWS_REGION}
@@ -33,10 +19,13 @@ phases:
       - echo ${CODEBUILD_SOURCE_VERSION}
       - echo ${CODEBUILD_SRC_DIR}
       - echo ${HOME}
+      - echo -------GIT---------
+      - git rev-parse HEAD   
       - echo -------------------------
   pre_build:
     commands:
       - dotnet --info --version
+      - git --version
   build:
     commands:
       - dotnet build src/microservice.api.rest
@@ -45,6 +34,7 @@ phases:
       - dotnet publish src/microservice.api.rest --output bin/publish
       - cd src/microservice.api.rest/bin/publish
       - zip -r microservice.api.rest.zip ./*
+      - mv ./ ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/
 artifacts:
   files:
-    - src/microservice.api.rest/bin/publish/microservice.api.rest.zip
+    - ${CODEBUILD_INITIATOR}/${CODEBUILD_SOURCE_VERSION}/microservice.api.rest.zip
